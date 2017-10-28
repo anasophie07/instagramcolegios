@@ -3,7 +3,7 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Bootstrap Snippet: Login Form</title>
+  <title> resgistro </title>
 
 
   <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
@@ -15,10 +15,13 @@
 
 <body>
     <div class="wrapper">
-    <form class="form-signin">
+    <form class="form-signin" action"{% url 'index' %}" method="post">
+      {% csrf_token %}
       <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address">
+      <input type="text" class="form-control" name="correo" placeholder="Email">
+      <input type="text" class="form-control" name="usuario" placeholder="Usuario">
       <input type="password" class="form-control" name="password" placeholder="Password" >
+      <input type="text" class="form-control" name="nombre_completo" placeholder="Nombre Completo">
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
